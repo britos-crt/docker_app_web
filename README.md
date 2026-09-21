@@ -2,7 +2,7 @@
 
 Esse é uma Aplicação web modelo estática de **cursos de tecnologia**, servida por um container **Apache HTTP Server** orquestrado via **Docker Compose**.
 Esse foi um exercicío proposto pelo modulo **Formação Docker Fundamentals** "_DIO_"
-Abaixo, explicação sobre a estrutura e implantação para o projeto modelo.
+<\br> Abaixo, explicação sobre a estrutura e implantação para o projeto modelo.
 
 ---
 
