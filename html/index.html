@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechCourses — Cursos de Tecnologia</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">&#60;/&#62;</span>
+        <span class="logo-text">TechCourses</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Início</a></li>
+          <li><a href="cursos.html">Cursos</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+      <button class="btn-primary nav-cta" onclick="window.location='cursos.html'">Explorar Cursos</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <span class="badge">🚀 Novo: Trilha de IA & Machine Learning</span>
+        <h1>Aprenda Tecnologia.<br/>Construa o <span class="highlight">Futuro</span>.</h1>
+        <p class="hero-sub">Cursos práticos de programação, Cloud, DevOps, Data Science e mais. Aprenda com projetos reais e instrutores experientes.</p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="window.location='cursos.html'">Ver todos os cursos</button>
+          <button class="btn-outline" onclick="document.getElementById('destaque').scrollIntoView({behavior:'smooth'})">Saiba mais</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><strong id="countStudents">0</strong><span>Alunos</span></div>
+          <div class="stat"><strong id="countCourses">0</strong><span>Cursos</span></div>
+          <div class="stat"><strong id="countInst">0</strong><span>Instrutores</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="code-window">
+          <div class="code-header">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="code-title">hello_world.py</span>
+          </div>
+          <pre class="code-body"><span class="kw">def</span> <span class="fn">aprender_tech</span>():
+    cursos = [
+        <span class="str">"Python"</span>,
+        <span class="str">"Docker"</span>,
+        <span class="str">"React"</span>,
+        <span class="str">"Cloud AWS"</span>,
+    ]
+    <span class="kw">for</span> curso <span class="kw">in</span> cursos:
+        <span class="fn">print</span>(<span class="str">f"Aprendendo {curso}!"</span>)
+
+aprender_tech()</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIAS -->
+  <section class="categories" id="destaque">
+    <div class="container">
+      <h2 class="section-title">Explore por Área</h2>
+      <p class="section-sub">Encontre o caminho certo para sua carreira em tecnologia</p>
+      <div class="cat-grid">
+        <div class="cat-card" onclick="window.location='cursos.html'">
+          <div class="cat-icon">🐍</div>
+          <h3>Programação</h3>
+          <p>Python, JavaScript, Java, Go, Rust e mais</p>
+        </div>
+        <div class="cat-card" onclick="window.location='cursos.html'">
+          <div class="cat-icon">☁️</div>
+          <h3>Cloud & DevOps</h3>
+          <p>AWS, Azure, GCP, Docker, Kubernetes, CI/CD</p>
+        </div>
+        <div class="cat-card" onclick="window.location='cursos.html'">
+          <div class="cat-icon">📊</div>
+          <h3>Data Science</h3>
+          <p>Machine Learning, IA, SQL, Power BI, Tableau</p>
+        </div>
+        <div class="cat-card" onclick="window.location='cursos.html'">
+          <div class="cat-icon">🔒</div>
+          <h3>Cibersegurança</h3>
+          <p>Ethical Hacking, LGPD, Redes, Pentest</p>
+        </div>
+        <div class="cat-card" onclick="window.location='cursos.html'">
+          <div class="cat-icon">🎨</div>
+          <h3>UX & Design</h3>
+          <p>Figma, Design System, Prototipação</p>
+        </div>
+        <div class="cat-card" onclick="window.location='cursos.html'">
+          <div class="cat-icon">📱</div>
+          <h3>Mobile</h3>
+          <p>React Native, Flutter, Android, iOS</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURSOS EM DESTAQUE -->
+  <section class="featured-courses">
+    <div class="container">
+      <h2 class="section-title">Cursos em Destaque</h2>
+      <p class="section-sub">Os mais procurados pela nossa comunidade</p>
+      <div class="courses-grid" id="featuredGrid"></div>
+      <div class="center-btn">
+        <button class="btn-primary" onclick="window.location='cursos.html'">Ver Todos os Cursos</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-title">O que dizem nossos alunos</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="avatar" style="background:#6366f1">AM</div>
+          <p>"Consegui meu primeiro emprego como Dev após concluir a trilha de Python. Os projetos práticos fizeram toda a diferença!"</p>
+          <strong>Ana Martins</strong><span> — Dev Junior @ Startup SP</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="avatar" style="background:#10b981">RC</div>
+          <p>"A trilha de DevOps é excelente. Conteúdo atualizado, instrutores que entendem o mercado real."</p>
+          <strong>Ricardo Costa</strong><span> — DevOps Engineer @ Fintech</span>
+        </div>
+        <div class="testimonial-card">
+          <div class="avatar" style="background:#f59e0b">JS</div>
+          <p>"Mudei de área depois dos 40 anos graças aos cursos de Data Science. Recomendo muito!"</p>
+          <strong>Juliana Santos</strong><span> — Data Analyst @ E-commerce</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="container cta-inner">
+      <div>
+        <h2>Pronto para começar?</h2>
+        <p>Junte-se a mais de 50.000 alunos e transforme sua carreira em tecnologia.</p>
+      </div>
+      <button class="btn-primary btn-large" onclick="window.location='cursos.html'">Começar agora — é grátis</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">&#60;/&#62;</span>
+        <span class="logo-text">TechCourses</span>
+        <p>Transformando vidas através da educação em tecnologia.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Plataforma</h4>
+        <ul>
+          <li><a href="cursos.html">Cursos</a></li>
+          <li><a href="sobre.html">Sobre nós</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Tecnologias</h4>
+        <ul>
+          <li><a href="#">Python</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">Docker</a></li>
+          <li><a href="#">Cloud</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="#">contato@techcourses.dev</a></li>
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 TechCourses. Feito com ❤️ e muito ☕ — Rodando em Apache + Docker</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

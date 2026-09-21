@@ -1,0 +1,17 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: techcourses_apache
+    ports:
+      - "8080:80"
+    volumes:
+      - ./html:/usr/local/apache2/htdocs/
+    restart: unless-stopped
+    environment:
+      - TZ=America/Sao_Paulo
+
+networks:
+  default:
+    name: techcourses_network
